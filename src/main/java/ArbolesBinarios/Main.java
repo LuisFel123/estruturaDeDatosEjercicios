@@ -15,7 +15,9 @@ public class Main {
                 opcion = Integer.parseInt(JOptionPane.showInputDialog(null,
                         "1. Agregar un nodo\n "
                                 + "2. Recorrer el arbol en inorden\n"
-                        + "3. Salir")
+                        + "3. Recorrer el arbol en preorden\n"
+                        +"4. Salir"
+                        )
                 );
                 switch (opcion) {
 
@@ -38,7 +40,13 @@ public class Main {
                         break;
 
                     case 3:
-
+                        if(!arbolBinario.estaVacio()){
+                            System.out.println("*******************");
+                            arbolBinario.preOrden(arbolBinario.raiz);
+                            System.out.println("*******************");
+                        }else{
+                            JOptionPane.showMessageDialog(null,"El arbol binario está vacio");
+                        }
 
                         break;
 
@@ -49,6 +57,6 @@ public class Main {
             } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(null, "ERROR" + e);
             }
-        } while (opcion != 3);
+        } while (opcion != 4);
     }
 }

@@ -42,12 +42,33 @@ public class ArbolBinario {
     }
 
     //metodo para recorrer el arbol en inOrden
-
+    //izquier-raiz-derecha
     public void inOrden(Nodo raiz){
         if(raiz!=null){
             inOrden(raiz.hijoIzquierdo);
             System.out.println("Indentificador: "+raiz.dato+" nombre: "+raiz.nombre);
             inOrden(raiz.hijoDerecho);
+        }
+    }
+
+    //motodo para recorre en el arbol en preorden
+    //raiz-izquierda-derecha
+    public void preOrden(Nodo raiz){
+        if(raiz!=null){
+            System.out.println("Indentificador: "+raiz.dato+" nombre: "+raiz.nombre);
+            preOrden(raiz.hijoIzquierdo);
+            preOrden(raiz.hijoDerecho);
+        }
+    }
+
+    //meoto para recorrer el postorden
+    //izquierdo-derecho-raiz
+    public void postOrden(Nodo raiz){
+        if(raiz!=null){
+            postOrden(raiz.hijoIzquierdo);
+            postOrden(raiz.hijoDerecho);
+            System.out.println("Indentificador: "+raiz.dato+" nombre: "+raiz.nombre);
+
         }
     }
 
