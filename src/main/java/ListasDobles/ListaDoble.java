@@ -66,4 +66,30 @@ public class ListaDoble {
 
         }
     }
+
+
+    //lista para eliminar del inicio
+    public int eliminarDelInicio(){
+        int elemento=inicio.dato;
+        if(inicio==fin){
+            inicio=fin=null;
+        }else {
+            inicio=inicio.siguiente;
+            inicio.anterior=null;
+        }
+        return elemento;
+    }
+
+
+    //lista para eliminar del final
+    public int eliminarDelFinal(){
+        int elemento=fin.dato;
+        if(inicio==fin){
+            inicio=fin=null;
+        }else {
+            fin=fin.anterior;
+            fin.siguiente=null;
+        }
+        return elemento;
+    }
 }
